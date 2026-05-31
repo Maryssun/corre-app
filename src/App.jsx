@@ -1,49 +1,33 @@
+import { useState } from 'react'
 import './App.css'
 
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
+import Historico from './pages/Historico'
+
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 function App() {
+  const [logado, setLogado] = useState(false)
+  const [telaAtual, setTelaAtual] = useState('dashboard')
+
+  if (!logado) {
+    return <Login onLogin={() => setLogado(true)} />
+  }
+
   return (
     <main className="app">
-      <section className="hero">
-        <p className="tag">CORRE</p>
-        <h1>O app da correria</h1>
-        <p>
-          Controle seus ganhos, gastos e lucro diário de forma simples.
-        </p>
-      </section>
+      <div className="app-container">
+        <Header
+          telaAtual={telaAtual}
+          mudarTela={setTelaAtual}
+        />
 
-      <section className="dashboard">
-        <div className="card">
-          <span>Ganhos do mês</span>
-          <strong>R$ 0,00</strong>
-        </div>
+        {telaAtual === 'historico' ? <Historico /> : <Dashboard />}
 
-        <div className="card">
-          <span>Gastos do mês</span>
-          <strong>R$ 0,00</strong>
-        </div>
-
-        <div className="card destaque">
-          <span>Lucro estimado</span>
-          <strong>R$ 0,00</strong>
-        </div>
-      </section>
-
-      <section className="form-card">
-        <h2>Novo lançamento</h2>
-
-        <div className="form-grid">
-          <input type="date" />
-          <input type="number" placeholder="Ganho do dia" />
-          <input type="number" placeholder="Combustível" />
-          <input type="number" placeholder="Alimentação" />
-          <input type="number" placeholder="Manutenção" />
-          <input type="number" placeholder="Outros gastos" />
-        </div>
-
-        <textarea placeholder="Observação"></textarea>
-
-        <button>Salvar lançamento</button>
-      </section>
+        <Footer />
+      </div>
     </main>
   )
 }
