@@ -10,6 +10,29 @@
       "gastos": 85,
       "lucro": 365,
       "id": "sMAW61wEY6s"
+    },
+    {
+      "data": "2026-06-01",
+      "ganho": 250,
+      "combustivel": 35,
+      "categoria": "Alimentação",
+      "valorGasto": 15,
+      "observacao": "",
+      "gastos": 50,
+      "lucro": 200,
+      "id": "lQcUgCqKNjU"
+    },
+    {
+      "data": "2026-04-01",
+      "ganho": 950,
+      "combustivel": 72,
+      "categoria": "Alimentação",
+      "valorGasto": 17,
+      "observacao": "",
+      "gastos": 89,
+      "lucro": 861,
+      "id": "Tmg4rPD3lCg"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
