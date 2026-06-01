@@ -1,0 +1,15 @@
+{
+  "lancamentos": [
+    {
+      "data": "2026-06-01",
+      "ganho": 450,
+      "combustivel": 60,
+      "categoria": "Alimentação",
+      "valorGasto": 25,
+      "observacao": "",
+      "gastos": 85,
+      "lucro": 365,
+      "id": "sMAW61wEY6s"
+    }
+  ]
+}
